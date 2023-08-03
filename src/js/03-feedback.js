@@ -4,8 +4,6 @@ const STORAGE_KEY = 'feedback-form-state';
 
 let formData = {};
 
-restoreFormData();
-
 const refs = {
   form: document.querySelector('.feedback-form'),
   textarea: document.querySelector('.feedback-form textarea'),
@@ -14,6 +12,8 @@ const refs = {
 
 refs.form.addEventListener('submit', onFormSubmit);
 refs.form.addEventListener('input', throttle(onFormInput, 500));
+
+restoreFormData();
 
 function onFormSubmit(e) {
   e.preventDefault();
